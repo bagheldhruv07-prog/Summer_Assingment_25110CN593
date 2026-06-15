@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main()
+{
+    int a[100], n, i, count = 0;
+
+    printf("Enter the size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements: ", n);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    for (i = 0; i < n; i++)
+    {
+        if (a[i] != 0)
+        {
+            a[count] = a[i];
+            count++;
+        }
+    }
+
+    while (count < n)
+    {
+        a[count] = 0;
+        count++;
+    }
+
+    printf("Array after moving zeroes to end: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", a[i]);
+    }
+
+    return 0;
+}
